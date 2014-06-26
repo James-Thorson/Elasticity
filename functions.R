@@ -27,7 +27,7 @@ ParOrder <- c("M_a_All","M_a_Juv","M_a_Adult",  "h","SR_alpha","R0",
               "Linf","K","W_1",  "Lmat","Amat")
 ## Names for plotting
 ParName <- c("All ages", "Juvenile", "Adult", "Steepness", "MRPSB",
-             expression(R[0]), expression(L[inf]), "k", expression(W[1]),
+             expression(R[0]), expression(L[inf]), "k", expression(theta[1]),
              expression(L[mat]), expression(A[mat]))
 Multiplier.values <- data.frame("Big-"=exp(-0.20), "Small-"=exp(-0.1),
                                 "Default"=1, "Small+"=exp(0.1), "Big+"=exp(0.20))

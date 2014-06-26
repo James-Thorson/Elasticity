@@ -15,7 +15,7 @@
 ## function, also reorganized some of the code
 ##############################################
 
-## File = "C:/Users/James.Thorson/Desktop/UW Hideaway/Collaborations/Nonstationary targets/"
+## setwd("C:/Users/James.Thorson/Desktop/Project_git/Elasticity")
 ## Paths are now relative so make sure the wd is in the right folder
 rm(list=ls())
 File <- paste0(getwd(), "/")
