@@ -30,8 +30,8 @@ SpeciesSet_Example= c("long-lived", "medium-lived", "short-lived")
 M_Set_Example<- c(.05, .2 ,.6)
 Linf_Set_Example<- c(45,90,30)
 LMARR_Set_Example<- c(-1,2,1)
-MLRR_Set_Example= exp(LMARR_Set_Example) / (1 - exp(-M_Set_Example))
 ## what is steepness?
+MLRR_Set_Example= exp(LMARR_Set_Example) / (1 - exp(-M_Set_Example))
 round(MLRR_Set_Example / (4 + MLRR_Set_Example),2)
 
 ### The full sets across which we loop, used for the example life

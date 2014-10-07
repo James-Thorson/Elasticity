@@ -200,7 +200,16 @@ for(SensI in c(ceiling(length(SensSet)/2),(1:length(SensSet))[-ceiling(length(Se
     SB_a = R0 * SBPR_a
     ## B-H recruitment parameters
     MLRR = exp(LMARR) / (1 - exp(-M))
+    # Exact calculation for MLRR from MARR, given that M_a varies (also accounts for when maturity isn't knife-edge)
+    # NOTE: too complicated for main text!
+    # Also doesn't affect the answer very much
+    if(M_Type=="Length-Based" & FALSE){
+      MLRR_amat = rep(0, length(AgeSet))
+      for(a in 1:length(MLRR_amat)) MLRR_amat[a] = exp(LMARR) * sum( Surv_a[a:length(AgeSet)]/Surv_a[a] )
+      MLRR = weighted.mean( MLRR_amat, w=diff(c(Mat_a,1)) )
+    }
     h = MLRR / (4 + MLRR)
+    if( SensI==ceiling(length(SensSet)/2) & F_I==1 & ParI==1 ) print(paste0("h=",h))
     SB_0 = sum(SB_a)
     SR_alpha = MLRR / sum(SBPR_a)               # From Myers et al. 1999
     SR_beta = ( (SR_alpha * SB_0) / R0 - 1) / SB_0   # From definition of B-H SRR
