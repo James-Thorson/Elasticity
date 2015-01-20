@@ -274,7 +274,7 @@ figure_new <- function(type="png", res=500, width, height){
     lwd.tmp <- 1.5
     for(ParI in 1:length(ParOrder)){
         ## Make big plotting area
-        plot(1, type="n", axes=FALSE, xlim=c(0.5,3.5), ylim=c(-12,12) ,xlab="", ylab="") #
+        plot(1, type="n", axes=FALSE, xlim=c(0.5,3.5), ylim=c(-12,8) ,xlab="", ylab="") #
         if(ParI==1)
             legend("bottomleft", legend=SpeciesSet_Example, lty=species.ltys,
                    col=species.cols, bty="n", cex=.6,
@@ -285,7 +285,7 @@ figure_new <- function(type="png", res=500, width, height){
         text.temp[c(1,4,7,10)] <- c("Mortality", "Recruitment", "Size", "Maturity")
         mtext(side=3, outer=FALSE, line=.25, text=text.temp[ParI], cex=.8)
         for(SpeciesI in 1:3){
-            lines( x=1:3, y=Elas.table[c(0,3,6)+SpeciesI,ParI], col=species.cols[SpeciesI],  
+            lines( x=1:3, y=Elas.table[c(0,3,6)+SpeciesI,ParI], col=species.cols[SpeciesI],
               lwd=lwd.tmp, lty=species.ltys[SpeciesI])
         }
         abline(h=0, lty="dashed", col=border.col, lwd=.5)
