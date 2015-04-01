@@ -20,7 +20,7 @@ W_2 = 3.00 # Necessary for derivations used below (although fusiform prior is 3.
 ## the loop
 R0_global <- 1e9
 Interval = log( c(1.01, R0_global*2) )
-AgeSet = 0:100
+AgeSet = 0:200
 M_Type = c("Constant","Length-Based")[2]
 Delta = 1e-6
 ParOrder <- c("M_a_All","M_a_Juv","M_a_Adult",  "h","SR_alpha","R0",
