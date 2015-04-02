@@ -20,7 +20,7 @@ W_2 = 3.00 # Necessary for derivations used below (although fusiform prior is 3.
 ## the loop
 R0_global <- 1e9
 Interval = log( c(1.01, R0_global*2) )
-AgeSet = 0:100
+AgeSet = 0:500
 M_Type = c("Constant","Length-Based")[2]
 Delta = 1e-6
 ParOrder <- c("M_a_All","M_a_Juv","M_a_Adult",  "h","SR_alpha","R0",
@@ -286,7 +286,7 @@ for(SensI in c(ceiling(length(SensSet)/2),(1:length(SensSet))[-ceiling(length(Se
     }
     if(ParSet[ParI]=="Linf"){ Linf_Input = Linf * Multiplier }else{ Linf_Input = Linf }
     if(ParSet[ParI]=="K"){ K_Input = K * Multiplier }else{ K_Input = K }
-    ## Special case since we have to parameterizations of recruitment
+    ## Special case since we have two parameterizations of recruitment
     if(ParSet[ParI]=="h" | ParSet[ParI]=="R0"){
         if(ParSet[ParI]=="h"){
             h_Input = h * Multiplier

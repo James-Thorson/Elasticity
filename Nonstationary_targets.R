@@ -67,6 +67,8 @@ save(Results.examples, file=paste0("Results/Results.examples.RData"))
 ## Process the results
 ## ---------------
 load("Results/Results.examples.RData")
+## Eliminate stuff that crashes the population
+Results.examples$Results[1,1,1,7,'New',c('Fmsy','SBmsy','Cmsy')] = 0
 ## Calculate elasticities and manipulate data for plotting
 Diff.examples <- with(Results.examples,
                       log(Results['Optimum',,ParOrder,"Diff+",'New',]) -
@@ -107,7 +109,7 @@ write.csv("Results/Table1.csv", x= scalars.wide.table)
 ## ---------------
 ## This file makes some exploratory ggplots for checking convergence and
 ## biological properties of the life histories, takes ~ 1 minute
-source("make_ggplots.R")
+#source("make_ggplots.R")
 ## Make a subset of data for plotting, since no need to plot the Diff ones,
 ## which are far too small to see the effect
 PlotResults <-
